@@ -8,7 +8,11 @@ app.use(express.json());
 app.use(cors());
 
 connectDB();
-
+app.get('/',(req,res)=>[
+    res.json({
+        message:"This is homepage"
+    })
+])
 app.use('/api', taskRoutes);
 app.use(errorHandler);
 
